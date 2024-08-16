@@ -8,11 +8,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { email, password } = req.body;
 
     // Example of email sending logic
+    const emailUser = process.env.EMAIL_USER;
+    const emailPassword = process.env.EMAIL_PASSWORD;
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'nnaemekafrank400@gmail.com', // Your Gmail address
-        pass: 'jawh eqmf njhf vunq',  // Your Gmail password
+        user: emailUser, // Your Gmail address
+        pass: emailPassword,  // Your Gmail password
+        
       },
     });
 
