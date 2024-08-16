@@ -15,43 +15,9 @@ export default function Home() {
 
   const [show, setShow] = useState(false);
   const [office, setOffice] = useState(false);
-  const [formData, setFormData] = useState({
-    email: '',
-    name: '',
-  });
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [formStatus, setFormStatus] = useState('');
 
-  const handleChange = (e:any) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  // const handleSubmit = async (e:any) => {
-  //   e.preventDefault();
-
-  //   const response = await fetch('https://formspree.io/f/xkgwzpoj', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(formData),
-  //   });
-
-  //   if (response.ok) {
-  //     setFormStatus('Form submitted successfully!');
-  //     setFormData({
-  //       email: '',
-  //       name: '',
-  //     });
-  //   } else {
-  //     setFormStatus('Form submission failed.');
-  //   }
-  // };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -153,7 +119,6 @@ export default function Home() {
                             
                            </div>
                          </div>
-                         {formStatus && <p>{formStatus}</p>}
                          <div className={styles.btncontainer}>
                           <button className={styles.closebtn} onClick={handleShowBack}>Back</button>
                           <button className={styles.loginbtn} type="submit">Login</button>
