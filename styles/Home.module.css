@@ -215,6 +215,19 @@
     border-radius: 50%;
   }
 
+  .errorMsg{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #E81123;
+    /* height: 50px; */
+    border-radius: 10px;
+    width: 100%;
+    /* background-color: rgb(233, 171, 171); */
+  }
+
   .btncontainer{
     display: flex;
     justify-content: flex-end;
@@ -259,3 +272,42 @@
   margin-left: 0.3rem;
   font-weight: 600;
 }
+
+.spinner {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+ @media screen and (max-width: 900px) {
+  .box{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin: 1rem;
+    width: 100%;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+}
+
+  @media  screen and (max-width: 1200px) {
+    .desktopMenu {
+      display: none;
+    }
+  }
