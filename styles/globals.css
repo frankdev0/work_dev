@@ -12,25 +12,18 @@
   font-family: 'Poppins';
 }
 
-html {
+html body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
   margin: 0;
   padding: 0;
-  /* background-color: #172554; */
+  background: linear-gradient(120deg, #30cfd0, #fcd34d, #ff6b6b);
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease infinite;
   overflow-x: hidden;
   
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  /* background-color: #172554; */
-  overflow-x: hidden;
-  
-}
 
 
 html {
