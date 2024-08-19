@@ -17,9 +17,9 @@ html body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: linear-gradient(120deg, #30cfd0, #fcd34d, #ff6b6b);
-  background-size: 300% 300%;
-  animation: gradientShift 10s ease infinite;
+  /* background: linear-gradient(120deg, #30cfd0, #fcd34d, #ff6b6b); */
+  /* background-size: 300% 300%; */
+  /* animation: gradientShift 10s ease infinite; */
   overflow-x: hidden;
   
 }

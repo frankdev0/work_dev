@@ -1,67 +1,85 @@
-/* .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-}
-
-
- */
-
- /* @media screen and (max-width: 900px) {
-  .desktopMenu {
-    display: none;
-  }}
-
-  @media  screen and (max-width: 1200px) {
-    .desktopMenu {
-      display: none;
-    }
-  } */
-
   .main {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(120deg, #30cfd0, #fcd34d, #ff6b6b);
-    background-size: 300% 300%;
-    animation: gradientShift 10s ease infinite;
-    padding: 6rem;
+    padding-top: 4rem;
     min-height: 100vh;
+    overflow: hidden;
   }
 
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+
+  .backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../public/mainpdf.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: 1;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 2;
   }
 
-  .box{
-    /* display: flex; */
+  .mainBox{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem 2rem 0rem 2rem;
+    padding: 2rem;
     border-radius: 10px;
-    background-color: #fFFFFF;
+    background-color: rgba(0, 0, 0, 0.65);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 1rem;
     width: 100%;
     max-width: 450px;
   }
 
+  .box{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.55);
+    margin: 1rem;
+    width: 100%;
+    max-width: 450px;
+  }
+  .boxx{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem;
+    width: 100%;
+    max-width: 420px;
+  }
+
   .adobeHeader{
     font-size: 1.3rem;
     font-weight: 600;
+    color: #ffffff;
+  }
+  .otherHeader{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000000;
   }
 
   .adobeText{
     font-size: 0.75rem;
     font-weight: 400;
-    color: #666;
+    color: #ffffff;
   }
 
   .officeIcon{
@@ -115,7 +133,6 @@
     width: 30px;
     height: 30px;
     border: 2px solid  #FF0000;
-    /* border-radius: 5px; */
   }
   .otherBox{
     display: flex;
@@ -125,7 +142,6 @@
     width: 30px;
     height: 30px;
     border: 2px solid  #2B579A;
-    /* border-radius: 5px; */
   }
 
   .copyright{
@@ -134,8 +150,13 @@
     text-align: center;
     font-size: 0.65rem;
     font-weight: 500;
-    color: #666;
+    color: #ffffff;
     margin: 0.5rem 0rem;
+  }
+
+  .otherEmailIcon{
+    font-size: 2rem;
+    color: #2B579A;
   }
 
   .modalsubtext{
@@ -186,8 +207,8 @@
     display: block;
     width: 100%;
     outline: none;
-    border: none; /* Remove all borders */
-    border-bottom: 1px solid #0067BB; /* Add blue bottom border */
+    border: none;
+    border-bottom: 1px solid #0067BB; 
     padding: 0.55rem 0.5rem;
     font-size: 0.75rem;
     font-weight: 400;
@@ -217,15 +238,11 @@
 
   .errorMsg{
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
     font-size: 0.85rem;
     font-weight: 500;
     color: #E81123;
-    /* height: 50px; */
     border-radius: 10px;
     width: 100%;
-    /* background-color: rgb(233, 171, 171); */
   }
 
   .btncontainer{
@@ -287,14 +304,7 @@
 }
 
  @media screen and (max-width: 900px) {
-  .box{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    margin: 1rem;
-    width: 100%;
-  }
+
 
   .main {
     display: flex;
@@ -303,6 +313,24 @@
     align-items: center;
     padding: 2rem;
   }
+
+  .mainBox{
+
+    margin: 0rem;
+  }
+
+  .box{
+      margin: 0rem;
+    }
+
+    .otherHeader{
+      font-size: 1rem;
+    }
+
+    .labels{
+      font-size: 0.65rem;
+      text-align: left;
+    }
 
 }
 
