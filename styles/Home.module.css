@@ -103,6 +103,7 @@
     font-size: 0.75rem;
     appearance: none;
     text-decoration: none;
+    cursor: pointer;
   }
   .emailLink{
     width: 100%;
@@ -115,6 +116,7 @@
     font-size: 0.75rem;
     appearance: none;
     text-decoration: none;
+    cursor: pointer;
   }
 
   .signin{
@@ -142,6 +144,13 @@
     width: 30px;
     height: 30px;
     border: 2px solid  #2B579A;
+  }
+
+  .verify{
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0rem;
+    color: #666;
   }
 
   .copyright{
